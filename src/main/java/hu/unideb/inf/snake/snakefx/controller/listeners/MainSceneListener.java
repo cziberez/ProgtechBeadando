@@ -1,4 +1,4 @@
-package hu.unideb.inf.snake.snakefx.model.scenes.listeners;
+package hu.unideb.inf.snake.snakefx.controller.listeners;
 
 /**
  *

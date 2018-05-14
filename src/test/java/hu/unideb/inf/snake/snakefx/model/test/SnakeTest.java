@@ -1,6 +1,6 @@
 package hu.unideb.inf.snake.snakefx.model.test;
 
-import hu.unideb.inf.snake.snakefx.model.snake.Snake;
+import hu.unideb.inf.snake.snakefx.model.dto.snakedto.Snake;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;

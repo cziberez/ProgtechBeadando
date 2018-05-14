@@ -1,7 +1,7 @@
 package hu.unideb.inf.snake.snakefx.model.graphics;
 
 import hu.unideb.inf.snake.snakefx.model.audio.Sounds;
-import hu.unideb.inf.snake.snakefx.model.snake.Snake;
+import hu.unideb.inf.snake.snakefx.model.dto.snakedto.Snake;
 import java.util.Random;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -49,7 +49,7 @@ public class Graphics {
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
                     gc.strokeRect(i * 10, j * 10, 10, 10);
-                        //if board
+                    //the block after the Snake
                     if (board[i][j] == 1) {
                         gc.setFill(Color.WHITE);
                         gc.fillRect(i * 10, j * 10, 10, 10);
@@ -64,7 +64,7 @@ public class Graphics {
                         gc.setFill(Color.RED);
                         gc.fillRect(i * 10, j * 10, 10, 10);
                         isEaten = false;
-                        //if snake isAlive(false);
+                        //if snake isAlive == false
                     } else if (board[i][j] == -2) {
                         gc.setFill(Color.WHITE);
                         gc.fillRect(i * 10, j * 10, 10, 10);
@@ -86,7 +86,7 @@ public class Graphics {
             if (board[x][y] == 0) {
                 board[x][y] = -1;
             }
-            //while snake.isAlive
+            //if we generate a food to a food
         } while (board[x][y] != -1);
     }
 

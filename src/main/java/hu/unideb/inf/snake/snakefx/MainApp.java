@@ -1,8 +1,8 @@
 package hu.unideb.inf.snake.snakefx;
 
 import hu.unideb.inf.snake.snakefx.controller.MainSceneController;
-import hu.unideb.inf.snake.snakefx.model.context.Context;
-import hu.unideb.inf.snake.snakefx.view.MainScene;
+import hu.unideb.inf.snake.snakefx.view.Context;
+import hu.unideb.inf.snake.snakefx.view.MainSceneView;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.stage.Stage;
@@ -22,7 +22,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) {
         Context context = new Context(stage);
-        MainScene mainScreen = new MainScene(context);
+        MainSceneView mainScreen = new MainSceneView(context);
         context.switchScene(mainScreen);
         MainSceneController.initAndStart(context, mainScreen);
     }

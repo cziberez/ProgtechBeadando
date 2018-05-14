@@ -1,6 +1,5 @@
-package hu.unideb.inf.snake.snakefx.model.basicview;
+package hu.unideb.inf.snake.snakefx.view;
 
-import hu.unideb.inf.snake.snakefx.model.context.Context;
 import java.net.URL;
 import javafx.geometry.Insets;
 import javafx.scene.layout.BorderPane;

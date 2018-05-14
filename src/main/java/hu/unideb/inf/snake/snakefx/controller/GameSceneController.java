@@ -1,14 +1,14 @@
 package hu.unideb.inf.snake.snakefx.controller;
 
-import hu.unideb.inf.snake.snakefx.dao.Dom;
-import hu.unideb.inf.snake.snakefx.model.context.Context;
+import hu.unideb.inf.snake.snakefx.dao.DomImpl;
+import hu.unideb.inf.snake.snakefx.view.Context;
 import hu.unideb.inf.snake.snakefx.model.graphics.Graphics;
 import hu.unideb.inf.snake.snakefx.model.audio.Sounds;
-import hu.unideb.inf.snake.snakefx.view.GameScene;
-import hu.unideb.inf.snake.snakefx.view.MainScene;
-import hu.unideb.inf.snake.snakefx.model.snake.Snake;
+import hu.unideb.inf.snake.snakefx.view.GameView;
+import hu.unideb.inf.snake.snakefx.view.MainSceneView;
+import hu.unideb.inf.snake.snakefx.model.dto.snakedto.Snake;
 import javafx.scene.input.KeyCode;
-import hu.unideb.inf.snake.snakefx.model.scenes.listeners.GameSceneListener;
+import hu.unideb.inf.snake.snakefx.controller.listeners.GameSceneListener;
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.application.Platform;
@@ -22,15 +22,15 @@ public class GameSceneController {
 
     private Snake snake;
     private boolean disableMovement;
-    private MainScene mainScene;
+    private MainSceneView mainScene;
     private Sounds sounds;
 
-    public GameSceneController(Graphics graphics, GameScene gameScene, Context context) {
+    public GameSceneController(Graphics graphics, GameView gameScene, Context context) {
         snake = new Snake();
         sounds = new Sounds();
         sounds.playGameStart();
         this.disableMovement = false;
-        graphics.score = 0;
+        graphics.score = 0; //just in case ;)
 
         gameScene.setGameSceneListener(new GameSceneListener() {
             @Override
@@ -65,16 +65,15 @@ public class GameSceneController {
 
             @Override
             public void onMainMenuPressed() {
-                mainScene = new MainScene(context);
+                mainScene = new MainSceneView(context);
                 context.switchScene(mainScene);
                 new MainSceneController(context, mainScene);
             }
 
             @Override
             public void onSavePressed() {
-                Dom dom = new Dom();
-                dom.insertScore(gameScene.inputName.getText(), graphics.score);
-                System.out.println(gameScene.inputName.getText() + " " + graphics.score);
+                DomImpl dom = new DomImpl();
+                dom.saveScore(gameScene.inputName.getText(), graphics.score);
                 onMainMenuPressed();
             }
         });

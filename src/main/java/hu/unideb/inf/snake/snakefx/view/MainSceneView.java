@@ -1,8 +1,6 @@
 package hu.unideb.inf.snake.snakefx.view;
 
-import hu.unideb.inf.snake.snakefx.model.context.Context;
-import hu.unideb.inf.snake.snakefx.model.scenes.listeners.MainSceneListener;
-import hu.unideb.inf.snake.snakefx.model.basicview.BasicView;
+import hu.unideb.inf.snake.snakefx.controller.listeners.MainSceneListener;
 import javafx.geometry.HPos;
 import javafx.scene.control.Button;
 
@@ -10,7 +8,7 @@ import javafx.scene.control.Button;
  *
  * @author Zoli
  */
-public class MainScene extends BasicView {
+public class MainSceneView extends BasicView {
 
     private MainSceneListener mainScreenListener;
 
@@ -18,7 +16,7 @@ public class MainScene extends BasicView {
     private Button button2;
     private Button button3;
 
-    public MainScene(Context context) {
+    public MainSceneView(Context context) {
         super(context);
         init();
         add();

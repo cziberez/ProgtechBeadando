@@ -1,7 +1,5 @@
 package hu.unideb.inf.snake.snakefx.view;
 
-import hu.unideb.inf.snake.snakefx.model.context.Context;
-import hu.unideb.inf.snake.snakefx.model.basicview.BasicView;
 import javafx.geometry.HPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -9,14 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.paint.Color;
-import hu.unideb.inf.snake.snakefx.model.scenes.listeners.GameSceneListener;
+import hu.unideb.inf.snake.snakefx.controller.listeners.GameSceneListener;
 import javafx.scene.control.TextField;
 
 /**
  *
  * @author Zoli
  */
-public class GameScene extends BasicView {
+public class GameView extends BasicView {
     
     private Button mainMenuButton;
     private Button submitButton;
@@ -27,7 +25,7 @@ public class GameScene extends BasicView {
     private GameSceneListener gameSceneListener;
     public TextField inputName;
     
-    public GameScene(Context context) {
+    public GameView(Context context) {
         super(context);
         
         canvas = new Canvas(500, 440);

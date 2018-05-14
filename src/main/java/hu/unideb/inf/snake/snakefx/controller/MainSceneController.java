@@ -1,12 +1,12 @@
 package hu.unideb.inf.snake.snakefx.controller;
 
-import hu.unideb.inf.snake.snakefx.model.context.Context;
+import hu.unideb.inf.snake.snakefx.view.Context;
 import hu.unideb.inf.snake.snakefx.model.graphics.Graphics;
 import hu.unideb.inf.snake.snakefx.model.audio.Sounds;
-import hu.unideb.inf.snake.snakefx.view.HighScoreScene;
-import hu.unideb.inf.snake.snakefx.view.MainScene;
-import hu.unideb.inf.snake.snakefx.view.GameScene;
-import hu.unideb.inf.snake.snakefx.model.scenes.listeners.MainSceneListener;
+import hu.unideb.inf.snake.snakefx.view.HighScoreView;
+import hu.unideb.inf.snake.snakefx.view.MainSceneView;
+import hu.unideb.inf.snake.snakefx.view.GameView;
+import hu.unideb.inf.snake.snakefx.controller.listeners.MainSceneListener;
 
 /**
  *
@@ -14,12 +14,12 @@ import hu.unideb.inf.snake.snakefx.model.scenes.listeners.MainSceneListener;
  */
 public class MainSceneController {
 
-    private GameScene playScene;
-    private HighScoreScene highScoreScene;
+    private GameView playScene;
+    private HighScoreView highScoreSceneView;
     private Graphics graphics;
     private Sounds sounds;
 
-    public MainSceneController(Context context, MainScene mainScene) {
+    public MainSceneController(Context context, MainSceneView mainScene) {
 
         graphics = new Graphics();
         sounds = new Sounds();
@@ -28,7 +28,7 @@ public class MainSceneController {
         mainScene.setMainScreenListener(new MainSceneListener() {
             @Override
             public void onButtonPlay() {
-                playScene = new GameScene(context);
+                playScene = new GameView(context);
                 context.switchScene(playScene);
                 playScene.requestFocus();
                 new GameSceneController(graphics, playScene, context);
@@ -36,10 +36,10 @@ public class MainSceneController {
 
             @Override
             public void onButtonHighscore() {
-                highScoreScene = new HighScoreScene(context, highScoreScene);
-                context.switchScene(highScoreScene);
-                highScoreScene.requestFocus();
-                new HighScoreScene(context, highScoreScene);
+                highScoreSceneView = new HighScoreView(context, highScoreSceneView);
+                context.switchScene(highScoreSceneView);
+                highScoreSceneView.requestFocus();
+                new HighScoreView(context, highScoreSceneView);
             }
 
             @Override
@@ -51,7 +51,7 @@ public class MainSceneController {
     }
 
     // Factory method to create an object.
-    public static void initAndStart(Context context, MainScene mainScene) {
+    public static void initAndStart(Context context, MainSceneView mainScene) {
         new MainSceneController(context, mainScene);
     }
 }

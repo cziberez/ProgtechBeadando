@@ -1,4 +1,4 @@
-package hu.unideb.inf.snake.snakefx.model.context;
+package hu.unideb.inf.snake.snakefx.view;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;

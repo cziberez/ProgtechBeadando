@@ -1,4 +1,4 @@
-package hu.unideb.inf.snake.snakefx.model.user;
+package hu.unideb.inf.snake.snakefx.model.dto.userdto;
 
 /**
  *
@@ -33,11 +33,6 @@ public class User {
 
     public void setScore(int score) {
         this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" + "name=" + name + ", score=" + score + '}';
     }
 
 }

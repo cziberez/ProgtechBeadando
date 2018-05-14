@@ -1,4 +1,4 @@
-package hu.unideb.inf.snake.snakefx.model.snake;
+package hu.unideb.inf.snake.snakefx.model.dto.snakedto;
 
 /**
  *
