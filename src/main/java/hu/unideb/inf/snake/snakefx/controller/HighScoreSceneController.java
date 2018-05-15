@@ -4,7 +4,6 @@ import hu.unideb.inf.snake.snakefx.controller.listeners.HighScoreSceneListener;
 import hu.unideb.inf.snake.snakefx.view.Context;
 import hu.unideb.inf.snake.snakefx.view.HighScoreView;
 import hu.unideb.inf.snake.snakefx.view.MainSceneView;
-import javafx.stage.Stage;
 
 /**
  *
