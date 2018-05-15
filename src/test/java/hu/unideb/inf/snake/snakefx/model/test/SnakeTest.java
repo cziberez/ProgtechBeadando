@@ -24,6 +24,14 @@ public class SnakeTest {
     }
 
     @Test
+    public void defaultSnakeTest() {
+        assertEquals(snake.getSize(), 4);
+        assertEquals(snake.getXPosition(), 25);
+        assertEquals(snake.getYPosition(), 22);
+        assertEquals(snake.getDirection(), Snake.Direction.RIGHT);
+    }
+
+    @Test
     public void testIsAlive() {
         snake.setIsAlive(true);
         assertEquals(true, snake.isAlive());
